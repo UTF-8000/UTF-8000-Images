@@ -36,7 +36,7 @@
    <g>
       <text text-anchor="middle" dominant-baseline="central">
          <tspan x="-400" class="utf-8000-byte utf-8000-non-continuation-byte">
-            <tspan class="utf-8000-start-bits">11111111</tspan>
+            <tspan class="utf-8000-continuation-prefix-bits">11</tspan><tspan class="utf-8000-start-bits">111111</tspan>
          </tspan>
          <tspan x="-300" class="utf-8000-byte utf-8000-continuation-byte">
             <tspan class="utf-8000-continuation-prefix-bits">10</tspan><tspan class="utf-8000-start-bits">111111</tspan>
@@ -67,8 +67,8 @@
 
    <g>
 
-   <polyline id="line-first-byte" points="-45,10 -45,0  +45,0  +45,10" fill="none" stroke-width="4" stroke="magenta" transform="translate(-400 -25)" />
-   <text text-anchor="middle" dominant-baseline="central" class="utf-8000-byte utf-8000-start-bits" transform="translate(-400 -40)">First Byte</text>
+   <polyline id="line-first-byte" points="-45,10 -45,0  +45,0  +45,10" fill="none" stroke-width="4" stroke="cyan" transform="translate(-400 -25)" />
+   <text text-anchor="middle" dominant-baseline="central" class="utf-8000-byte utf-8000-continuation-prefix-bits" transform="translate(-400 -40)">First Byte</text>
 
    <polyline id="line-continuation-bytes" points="-45,10 -45,0 +745,0 +745,10" fill="none" stroke-width="4" stroke="cyan" transform="translate(-300 -25)" />
    <text text-anchor="middle" dominant-baseline="central" class="utf-8000-byte utf-8000-continuation-prefix-bits" transform="translate(50 -40)">Continuation Bytes</text>
