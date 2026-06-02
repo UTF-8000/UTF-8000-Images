@@ -8,32 +8,36 @@
             font-size: 12pt;
          }
 
-         .utf-8000-self-sync-bits-first {
+         .utf-8000-bits-self-sync-first {
             font-weight: bold;
             fill: cyan;
          }
 
-         .utf-8000-self-sync-bits-continuation {
+         .utf-8000-bits-self-sync-continuation {
             font-weight: bold;
             fill: cyan;
          }
 
-         .utf-8000-y-bits {
+         .utf-8000-bits-z {
             fill: orange;
          }
 
-         .utf-8000-start-bits {
+         .utf-8000-bits-start {
             font-weight: bold;
             fill: magenta;
          }
 
-         .utf-8000-mandatory-content-bits {
+         .utf-8000-bits-content-mandatory {
             font-weight: bold;
             fill: lime;
          }
 
-         .utf-8000-optional-content-bits {
+         .utf-8000-bits-content-optional {
             fill: lime;
+         }
+
+         .utf-8000-bits-unknown {
+            color: white;
          }
       </style>
    </defs>
@@ -41,31 +45,31 @@
    <g>
       <text text-anchor="middle" dominant-baseline="central">
          <tspan x="-400" class="utf-8000-byte utf-8000-non-continuation-byte">
-            <tspan class="utf-8000-self-sync-bits-first">11</tspan><tspan class="utf-8000-start-bits">111111</tspan>
+            <tspan class="utf-8000-bits-self-sync-first">11</tspan><tspan class="utf-8000-bits-start">111111</tspan>
          </tspan>
          <tspan x="-300" class="utf-8000-byte utf-8000-continuation-byte">
-            <tspan class="utf-8000-self-sync-bits-continuation">10</tspan><tspan class="utf-8000-start-bits">111111</tspan>
+            <tspan class="utf-8000-bits-self-sync-continuation">10</tspan><tspan class="utf-8000-bits-start">111111</tspan>
          </tspan>
          <tspan x="-200" class="utf-8000-byte utf-8000-continuation-byte">
-            <tspan class="utf-8000-self-sync-bits-continuation">10</tspan><tspan class="utf-8000-start-bits">111111</tspan>
+            <tspan class="utf-8000-bits-self-sync-continuation">10</tspan><tspan class="utf-8000-bits-start">111111</tspan>
          </tspan>
          <tspan x="-100" class="utf-8000-byte utf-8000-continuation-byte">
-            <tspan class="utf-8000-self-sync-bits-continuation">10</tspan><tspan class="utf-8000-start-bits">110</tspan><tspan class="utf-8000-mandatory-content-bits">xxx</tspan>
+            <tspan class="utf-8000-bits-self-sync-continuation">10</tspan><tspan class="utf-8000-bits-start">110</tspan><tspan class="utf-8000-bits-content-mandatory">xxx</tspan>
          </tspan>
          <tspan x="0" class="utf-8000-byte utf-8000-continuation-byte">
-            <tspan class="utf-8000-self-sync-bits-continuation">10</tspan><tspan class="utf-8000-mandatory-content-bits">xx</tspan><tspan class="utf-8000-optional-content-bits">xxxx</tspan>
+            <tspan class="utf-8000-bits-self-sync-continuation">10</tspan><tspan class="utf-8000-bits-content-mandatory">xx</tspan><tspan class="utf-8000-bits-content-optional">xxxx</tspan>
          </tspan>
          <tspan x="+100" class="utf-8000-byte utf-8000-continuation-byte">
-            <tspan class="utf-8000-self-sync-bits-continuation">10</tspan><tspan class="utf-8000-optional-content-bits">xxxxxx</tspan>
+            <tspan class="utf-8000-bits-self-sync-continuation">10</tspan><tspan class="utf-8000-bits-content-optional">xxxxxx</tspan>
          </tspan>
          <tspan x="+200" class="utf-8000-byte utf-8000-continuation-byte">
-            <tspan class="utf-8000-self-sync-bits-continuation">10</tspan><tspan class="utf-8000-optional-content-bits">xxxxxx</tspan>
+            <tspan class="utf-8000-bits-self-sync-continuation">10</tspan><tspan class="utf-8000-bits-content-optional">xxxxxx</tspan>
          </tspan>
          <tspan x="+300" class="utf-8000-byte">
             <tspan>...</tspan>
          </tspan>
          <tspan x="+400" class="utf-8000-byte utf-8000-continuation-byte">
-            <tspan class="utf-8000-self-sync-bits-continuation">10</tspan><tspan class="utf-8000-optional-content-bits">xxxxxx</tspan>
+            <tspan class="utf-8000-bits-self-sync-continuation">10</tspan><tspan class="utf-8000-bits-content-optional">xxxxxx</tspan>
          </tspan>
       </text>
    </g>
@@ -73,19 +77,19 @@
    <g>
 
    <polyline id="line-first-byte" points="-45,10 -45,0  +45,0  +45,10" fill="none" stroke-width="4" stroke="cyan" transform="translate(-400 -25)" />
-   <text text-anchor="middle" dominant-baseline="central" class="utf-8000-byte utf-8000-self-sync-bits-first" transform="translate(-400 -40)">First Byte</text>
+   <text text-anchor="middle" dominant-baseline="central" class="utf-8000-byte utf-8000-bits-self-sync-first" transform="translate(-400 -40)">First Byte</text>
 
    <polyline id="line-continuation-bytes" points="-45,10 -45,0 +745,0 +745,10" fill="none" stroke-width="4" stroke="cyan" transform="translate(-300 -25)" />
-   <text text-anchor="middle" dominant-baseline="central" class="utf-8000-byte utf-8000-self-sync-bits-continuation" transform="translate(50 -40)">Continuation Bytes</text>
+   <text text-anchor="middle" dominant-baseline="central" class="utf-8000-byte utf-8000-bits-self-sync-continuation" transform="translate(50 -40)">Continuation Bytes</text>
 
    <polyline id="line-start-bytes" points="-45,10 -45,0 +345,0 +345,10" fill="none" stroke-width="4" stroke="magenta" transform="translate(-400 -75)" />
-   <text text-anchor="middle" dominant-baseline="central" class="utf-8000-byte utf-8000-start-bits" transform="translate(-250 -90)">Start Bytes</text>
+   <text text-anchor="middle" dominant-baseline="central" class="utf-8000-byte utf-8000-bits-start" transform="translate(-250 -90)">Start Bytes</text>
 
    <polyline id="line-mandatory-content-bytes" points="-45,-10 -45,0 +145,0 +145,-10" fill="none" stroke-width="4" stroke="lime" transform="translate(-100 +25)" />
-   <text text-anchor="middle" dominant-baseline="central" class="utf-8000-byte utf-8000-mandatory-content-bits" transform="translate(-50 +40)">Mandatory Content Bytes</text>
+   <text text-anchor="middle" dominant-baseline="central" class="utf-8000-byte utf-8000-bits-content-mandatory" transform="translate(-50 +40)">Mandatory Content Bytes</text>
 
    <polyline id="line-optional-content-bytes" points="-45,-10 -45,0 +545,0 +545,-10" fill="none" stroke-width="4" stroke="lime" transform="translate(-100 +75)" />
-   <text text-anchor="middle" dominant-baseline="central" class="utf-8000-byte utf-8000-optional-content-bits" transform="translate(150 +90)">Content Bytes</text>
+   <text text-anchor="middle" dominant-baseline="central" class="utf-8000-byte utf-8000-bits-content-optional" transform="translate(150 +90)">Content Bytes</text>
 
    </g>
 
